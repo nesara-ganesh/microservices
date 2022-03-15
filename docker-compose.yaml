@@ -1,0 +1,39 @@
+version: '3.3'  # version of compose format
+
+services:
+  welcome-service:
+    build: ./service1  # path is relative to docker-compose.yml location
+    hostname: hello-world-service
+    ports:
+      - 5050:5050  # host:container
+    networks:
+      sample:
+        aliases:
+          - welcome-service
+
+  registration-service:
+    build: ./service2
+    hostname: registration-service
+    ports:
+      - 5051:5051  # host:container
+    depends_on:
+      - welcome-service                            
+    networks:
+      sample:
+        aliases:
+          - registration-service
+          
+  payment-service:
+    build: ./service3
+    hostname: payment-service
+    ports:
+      - 5052:5052  # host:container
+    depends_on:
+      - welcome-service                            
+    networks:
+      sample:
+        aliases:
+          - payment-service
+
+networks:
+  sample:

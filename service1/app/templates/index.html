@@ -1,0 +1,29 @@
+<html>
+   <body>
+      <h1>MAHE KMP APP</h1>
+      <h2>Welcome to MAHE KMC</h2>
+      <h3>* Registration * Payment * Booking *</h3>
+      <form action="" method="POST">
+         <br>
+         <input type="submit" name="submit_button" value="Registration">
+         <br>
+         <br>
+         <input type="submit" name="submit_button" value="Payment">
+         <br>
+         <br>
+         <input type="submit" name="submit_button" value="Appointment">
+      </form>
+
+        {% for category, message in get_flashed_messages(with_categories=true) %}
+        <ul>
+            <li>
+            <div style="color: {{ category }}">{{ message }}</div>
+            </li>
+            <form action="" method="POST">
+         <br>
+         <input type="submit" name="submit_button" value="Home">
+          </form>
+        </ul>
+      {% endfor %}
+   </body>
+</html>

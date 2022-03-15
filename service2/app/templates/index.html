@@ -1,0 +1,25 @@
+<html>
+   <body>
+      <h1>MAHE KMC APP</h1>
+
+      <h3>User Registartion</h3>
+      
+      <form action="" method="POST">
+         <br>
+         <input type="submit" name="submit_button" value="Register">
+         <input type="submit" name="submit_button" value="Payment">
+      </form>
+
+        {% for category, message in get_flashed_messages(with_categories=true) %}
+        <ul>
+            <li>
+            <div style="color: {{ category }}">{{ message }}</div>
+            </li>
+            <form action="" method="POST">
+         <br>
+         <input type="submit" name="submit_button" value="Home">
+          </form>
+        </ul>
+      {% endfor %}
+   </body>
+</html>

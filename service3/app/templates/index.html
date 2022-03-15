@@ -1,0 +1,28 @@
+<html>
+   <body>
+      <h1>MAHE KMC APP</h1>
+
+      <h2>Payment Gateway</h2>
+      <h3>Netbanking</h3>
+      <h3>Credit / Debit Card</h3>
+      <h3>UPI</h3>
+      <form action="" method="POST">
+         <br>
+         <input type="submit" name="submit_button" value="Proceed">
+
+         <input type="submit" name="submit_button" value="Cancel">
+      </form>
+
+        {% for category, message in get_flashed_messages(with_categories=true) %}
+        <ul>
+            <li>
+            <div style="color: {{ category }}">{{ message }}</div>
+            </li>
+            <form action="" method="POST">
+         <br>
+         <input type="submit" name="submit_button" value="Home">
+          </form>
+        </ul>
+      {% endfor %}
+   </body>
+</html>
